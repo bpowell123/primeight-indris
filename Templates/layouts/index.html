@@ -1,0 +1,146 @@
+{% extends "layout_overrides.html" %}
+
+{% block css.custom %}
+{% endblock css.custom %}
+
+{% block body %}
+<!-- Text Header -->
+{% ifequal currentUser.display_name None %}
+	
+{% else %}
+	<div class="grid_4">
+				<div id="sort1" class="box" style="border:1px solid #ddd;height:130px;width:400px;overflow-y:auto;padding-bottom: 10px;">
+					<div class="block" id="whitlist" style="padding-top:0px;">
+					<div>
+						<form name="newitem" action="/newitem/" method="post">
+							<label for="newName" id="newName_label">Add Bucket List Item: </label><br>
+							<input id="newName" name="newName" class="newName" type="text" value="" style="width:85%;padding: 2px;"/>
+							<input type="image" id="add" name="add" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK8AAACvABQqw0mAAAABh0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzT7MfTgAAAzBJREFUWIXFl8+LHEUUxz+vu2d2dnF2/XUKuJCLqxFMiEJQQTAHRSQ3j3rw4p485CAYb6KoeDAHb6L/gYI3TxEF8eYvEEXFqMlBPGTN7M/prh9fD92z2z32xO2QYQtqBqrmve+nXlW9emOSOMqWHKk6kHU1+OAr6y0NHz8fIveCjyAgS7Mk/W25//m7z6xpPFeAxdvOvudDXHfhT7ByTBJKV9ksnjoBPNfFX+ctCNHO7rlfKcI/FH5E4Ue4MGLX/UwR3BNvfWZpF3+dI+Bj7oIMqc9+CABTQoiFI6kNzgNAJEgpUUkTgBSRUsRu/joDRBlBSQtAQpThwpwBVInPAtgp5gwQMM2MAImubNBpE24iAqiMgDUBLEFCHz+vTgBWT8Uffn1msO2yN/vZyhkpGlg1qepTJNY7Ndr7ZUn4BgAYK4O1McRv9w0OsDFSovJvljJ34YXTX2xPZhoR2Bi7V4pw/XziN+u6dQ2kQIwRpq+7xPW9y4PEskdmvS6Se3QnWRgDL7cC5GF8Mkp4P55aXX0lVoq3qMQYELOugTAzfNhbq482AEJMXNQhEtnNPqClXeOeNAB8sOpwzbU18BsAzpMJm/7NLWyGpIZm1pxe/Dv32+U+/4+j9nZjcAG9ZDCaCTDsH3sjd1fuD9GfFLIWIYGGEq0Hxcwi2FalNWUsZUnvx9sH97zWsGkryV799Mk787BjZrXXWmBm7LrNL6V4XysAdnV5cPfDLhShLi+JXrrA209fuvYfm6414YsfnfpBig+0Apj98f6z3x/v4q9zQZIXWF7AjG7vXFrvlN47vwVFMfuomUHuu/nrDuAgziAwAzdvgLy4MUCYd0WUO4ixPROYYRfOrXeqiTKAzAxKn8lUn4yZgAi7j73+4E/W50R5ECYYKl/KQt8N7aEkhaWDCWLtu97lpfIaZmYD4C5gCCwAvQourQDSCsKtHF++Y/XcsZfSxWRVkUBZp2YU+uvyJ1cvbv2+vWGlvYBQiQXAAw7IgS3gmpfGE4CMknpafAKwH41w4KQ/FU0H9NJyfHrVoQVi10v+0Imo2iayynrazsxYqBQA/CH9ds6Et7od+b/jfwHp+5qKBEXj3wAAAABJRU5ErkJggg==" class="addButton">
+						</form>
+					</div>
+						<div class="block">
+						{% for item in wList.whitListItems %}
+								<div class="{% cycle 'left_list' 'right_list' %}"><a href="/whitlist/">{{ item.name|title|slice:":25" }}</a></div>
+						{% endfor %}
+						<br>
+						</div>
+					</div>
+				</div>
+	</div>
+{% endifequal %}
+
+<!-- Info Boxes -->
+
+			<div class="clear"></div>
+
+<div class="grid_12">
+<!-- 	<div class="bottom_border">
+		<div style="float: left; font-size: 16px; padding-top: 5px; color: rgb(153, 153, 153); ">
+		<a href="?s=featured">Featured</a>
+		|
+		<a href="?s=new">New</a>
+		</div>
+		<div class="clear"/>
+		</div>
+	</div> -->
+	<div style="float:left;">
+{% for i in ilist %}
+	
+{{i|safe}}
+
+{% if forloop.last %}
+	</div>
+	<div class="clear"/></div>
+{% else %}
+	{% if forloop.counter|divisibleby:"3" %}
+		</div>
+		<div class="clear"/></div>
+		<div style="float:left;">
+	
+	{% endif %}
+{% endif %}
+
+{% endfor %}
+
+
+</div>
+
+<div class="grid_4">
+<div class="cat_box">
+<div class="bottom_border2">
+		<div style="float: left; font-size: 16px; padding-top: 5px;margin-top: -15px; color: rgb(153, 153, 153); ">
+	<h2 class="float_left">CATEGORIES</h2>
+	</div>
+	{% ifnotequal category None %}<div style="padding:7px;margin-left:120px;"><a href="/featured/">(clear)</a></div>{% endifnotequal %}
+	<div class="clear"/></div>
+	<div class="spacer_10"/></div>
+	<div id="categories">
+		<ul>
+		<li>
+		<a {% ifequal category "Adventure" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=Adventure">Adventure</a>
+		</li>
+		<li>
+		<a {% ifequal category "Arts" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=Arts">Arts & Culture</a>
+		</li>
+		<li>
+		<a {% ifequal category "Bizarre" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=Bizarre">Bizarre & Unusual</a>
+		</li>
+		<li>
+		<a {% ifequal category "Career" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=Career">Career</a>
+		</li>
+		<li>
+		<a {% ifequal category "DIY" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=DIY">DIY & Hobbies</a>
+		</li>
+		<li>
+		<a {% ifequal category "Education" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=Education">Education</a>
+		</li>
+		<li>
+		<a {% ifequal category "Family" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=Family">Family & Relationships</a>
+		</li>
+		<li>
+		<a {% ifequal category "Giving" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=Giving">Giving Back</a>
+		</li>
+		<li>
+		<a {% ifequal category "Health" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=Health">Health & Wellness</a>
+		</li>
+		<li>
+		<a {% ifequal category "Spiritual" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=Spiritual">Spiritual</a>
+		</li>
+		<li>
+		<a {% ifequal category "Sports" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=Sports">Sports & Recreation</a>
+		</li>
+		<li>
+		<a {% ifequal category "Travel" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=Travel">Travel</a>
+		</li>
+		<li>
+		<a {% ifequal category "Wealth" %}style="color:#E15F25;"{% endifequal %} href="/featured?category=Wealth">Wealth & Finance</a>
+		</li>
+		</ul>
+	</div>
+	</div>
+	<div class="clear"/></div>
+</div>
+</div>
+<!-- Grid -->
+
+
+{% endblock body %}
+
+{% block js.custom %}
+<script>
+	$(function() {
+		var data = [{{ scriptHtml|safe }}];
+		
+		$( "#newName" ).autocomplete({
+			minLength: 2,
+			source: data
+		});
+	});
+</script>
+<script type="text/javascript">
+function submitform()
+{
+  document.newitem2.submit();
+}
+</script>
+{% endblock js.custom %}

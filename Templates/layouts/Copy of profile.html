@@ -1,0 +1,346 @@
+{% extends "layout_overrides.html" %}
+{% block title %}dowhit - Profile{% endblock title %}
+{% block body %}
+<!-- Text Header -->
+
+			<div class="clear"></div>
+
+<!-- Center Column -->
+			<div class="grid_7">
+				<div class="box">
+					<h2>
+						<a href="#" id="toggle-forms">Profile</a>
+					</h2>
+					<div class="block" id="forms">
+						<form method="post" action="">
+							<fieldset>
+								<legend>Personal Information</legend>
+								<p>
+									<label>Display Name: </label>
+									<input type="text" name="display-name" value="{{ userdisplay }}" />
+								</p>
+								<p>
+									<label>Profile Pic: </label>
+									<div><a href="{{ profileURL }}"><img src="{{ profilePic }}"/></a></div>
+								</p>
+								<p>
+    								<style> :invalid { background-color: red; } </style>
+									<label>Email Address: </label>
+									<input type="email" name="email" value="{{ email }}" />
+								</p>
+								<p>
+									<label>First Name: </label>
+									<input type="text" name="first-name" value="{{ firstName }}" />
+								</p>
+								<p>
+									<label>Last Name: </label>
+									<input type="text" name="last-name" value="{{ lastName }}" />
+								</p>
+								<p>
+									<label>Date of Birth: </label>
+									<input type="text" name="dob" id="datepicker" value="{{ dob }}">
+								</p>
+								<p>
+									<label>Gender: </label>
+									<select name="Gender">
+										<option value="None">Select Gender...</option>
+										<option value="Female" {% ifequal gender "Female" %} selected="{{ gender }}" {% endifequal %}>Female</option>
+										<option value="Male" {% ifequal gender "Male" %} selected="{{ gender }}" {% endifequal %}>Male</option>
+									</select>
+								</p>
+								<p>
+									<label>Ethnicity: </label>
+									<select name="Ethnicity" value="{{ ethnicity }}">
+										<option value="None">Select Ethnicity...</option>
+									    <option value="White" {% ifequal ethnicity "White" %} selected="{{ ethnicity }}" {% endifequal %}>White</option>
+									    <option value="Black" {% ifequal ethnicity "Black" %} selected="{{ ethnicity }}" {% endifequal %}>Black</option>
+									    <option value="Hispanic" {% ifequal ethnicity "Hispanic" %} selected="{{ ethnicity }}" {% endifequal %}>Hispanic</option>
+									    <option value="Native American" {% ifequal ethnicity "Native American" %} selected="{{ ethnicity }}" {% endifequal %}>Native American</option>
+									    <option value="Alaskan Native" {% ifequal ethnicity "Alaskan Native" %} selected="{{ ethnicity }}" {% endifequal %}>Alaskan Native</option>
+									    <option value="Asian / Pacific Islander" {% ifequal ethnicity "Asian / Pacific Islander" %} selected="{{ ethnicity }}" {% endifequal %}>Asian / Pacific Islander</option>
+									    <option value="Other Race" {% ifequal ethnicity "Other Race" %} selected="{{ ethnicity }}" {% endifequal %}>Other Race</option>
+									</select>
+								</p>
+								<p>
+									<label>Country: </label>
+									<select name="Country" value="{{ country }}">
+									    <option value=" None">Select Country...</option>
+									    <option value="US" {% ifequal country "US" %} selected="{{ country }}" {% endifequal %}>United States</option>
+									    <option value="AF" {% ifequal country "AF" %} selected="{{ country }}" {% endifequal %}>Afghanistan</option>
+									    <option value="AL" {% ifequal country "AL" %} selected="{{ country }}" {% endifequal %}>Albania</option>
+									    <option value="DZ" {% ifequal country "DZ" %} selected="{{ country }}" {% endifequal %}>Algeria</option>
+									    <option value="AS" {% ifequal country "AS" %} selected="{{ country }}" {% endifequal %}>American Samoa</option>
+									    <option value="AD" {% ifequal country "AD" %} selected="{{ country }}" {% endifequal %}>Andorra</option>
+									    <option value="AO" {% ifequal country "AO" %} selected="{{ country }}" {% endifequal %}>Angola</option>
+									    <option value="AI" {% ifequal country "AI" %} selected="{{ country }}" {% endifequal %}>Anguilla</option>
+									    <option value="AQ" {% ifequal country "AQ" %} selected="{{ country }}" {% endifequal %}>Antarctica</option>
+									    <option value="AG" {% ifequal country "AG" %} selected="{{ country }}" {% endifequal %}>Antigua and Barbuda</option>
+									    <option value="AR" {% ifequal country "AR" %} selected="{{ country }}" {% endifequal %}>Argentina</option>
+									    <option value="AM" {% ifequal country "AM" %} selected="{{ country }}" {% endifequal %}>Armenia</option>
+									    <option value="AW" {% ifequal country "AW" %} selected="{{ country }}" {% endifequal %}>Aruba</option>
+									    <option value="AU" {% ifequal country "AU" %} selected="{{ country }}" {% endifequal %}>Australia</option>
+									    <option value="AT" {% ifequal country "AT" %} selected="{{ country }}" {% endifequal %}>Austria</option>
+									    <option value="AZ" {% ifequal country "AZ" %} selected="{{ country }}" {% endifequal %}>Azerbaijan</option>
+									    <option value="BS" {% ifequal country "BS" %} selected="{{ country }}" {% endifequal %}>Bahamas</option>
+									    <option value="BH" {% ifequal country "BH" %} selected="{{ country }}" {% endifequal %}>Bahrain</option>
+									    <option value="BD" {% ifequal country "BD" %} selected="{{ country }}" {% endifequal %}>Bangladesh</option>
+									    <option value="BB" {% ifequal country "BB" %} selected="{{ country }}" {% endifequal %}>Barbados</option>
+									    <option value="BY" {% ifequal country "BY" %} selected="{{ country }}" {% endifequal %}>Belarus</option>
+									    <option value="BE" {% ifequal country "BE" %} selected="{{ country }}" {% endifequal %}>Belgium</option>
+									    <option value="BZ" {% ifequal country "BZ" %} selected="{{ country }}" {% endifequal %}>Belize</option>
+									    <option value="BJ" {% ifequal country "BJ" %} selected="{{ country }}" {% endifequal %}>Benin</option>
+									    <option value="BM" {% ifequal country "BM" %} selected="{{ country }}" {% endifequal %}>Bermuda</option>
+									    <option value="BT" {% ifequal country "BT" %} selected="{{ country }}" {% endifequal %}>Bhutan</option>
+									    <option value="BO" {% ifequal country "BO" %} selected="{{ country }}" {% endifequal %}>Bolivia</option>
+									    <option value="BA" {% ifequal country "BA" %} selected="{{ country }}" {% endifequal %}>Bosnia and Herzegowina</option>
+									    <option value="BW" {% ifequal country "BW" %} selected="{{ country }}" {% endifequal %}>Botswana</option>
+									    <option value="BV" {% ifequal country "BV" %} selected="{{ country }}" {% endifequal %}>Bouvet Island</option>
+									    <option value="BR" {% ifequal country "BR" %} selected="{{ country }}" {% endifequal %}>Brazil</option>
+									    <option value="IO" {% ifequal country "IO" %} selected="{{ country }}" {% endifequal %}>British Indian Ocean Territory</option>
+									    <option value="BN" {% ifequal country "BN" %} selected="{{ country }}" {% endifequal %}>Brunei Darussalam</option>
+									    <option value="BG" {% ifequal country "BG" %} selected="{{ country }}" {% endifequal %}>Bulgaria</option>
+									    <option value="BF" {% ifequal country "BF" %} selected="{{ country }}" {% endifequal %}>Burkina Faso</option>
+									    <option value="BI" {% ifequal country "BI" %} selected="{{ country }}" {% endifequal %}>Burundi</option>
+									    <option value="KH" {% ifequal country "KH" %} selected="{{ country }}" {% endifequal %}>Cambodia</option>
+									    <option value="CM" {% ifequal country "CM" %} selected="{{ country }}" {% endifequal %}>Cameroon</option>
+									    <option value="CA" {% ifequal country "CA" %} selected="{{ country }}" {% endifequal %}>Canada</option>
+									    <option value="CV" {% ifequal country "CV" %} selected="{{ country }}" {% endifequal %}>Cape Verde</option>
+									    <option value="KY" {% ifequal country "KY" %} selected="{{ country }}" {% endifequal %}>Cayman Islands</option>
+									    <option value="CF" {% ifequal country "CF" %} selected="{{ country }}" {% endifequal %}>Central African Republic</option>
+									    <option value="TD" {% ifequal country "TD" %} selected="{{ country }}" {% endifequal %}>Chad</option>
+									    <option value="CL" {% ifequal country "CL" %} selected="{{ country }}" {% endifequal %}>Chile</option>
+									    <option value="CN" {% ifequal country "CN" %} selected="{{ country }}" {% endifequal %}>China</option>
+									    <option value="CX" {% ifequal country "CX" %} selected="{{ country }}" {% endifequal %}>Christmas Island</option>
+									    <option value="CC" {% ifequal country "CC" %} selected="{{ country }}" {% endifequal %}>Cocos (Keeling) Islands</option>
+									    <option value="CO" {% ifequal country "CO" %} selected="{{ country }}" {% endifequal %}>Colombia</option>
+									    <option value="KM" {% ifequal country "KM" %} selected="{{ country }}" {% endifequal %}>Comoros</option>
+									    <option value="CG" {% ifequal country "CG" %} selected="{{ country }}" {% endifequal %}>Congo</option>
+									    <option value="CD" {% ifequal country "CD" %} selected="{{ country }}" {% endifequal %}>Congo, the Democratic Republic of the</option>
+									    <option value="CK" {% ifequal country "CK" %} selected="{{ country }}" {% endifequal %}>Cook Islands</option>
+									    <option value="CR" {% ifequal country "CR" %} selected="{{ country }}" {% endifequal %}>Costa Rica</option>
+									    <option value="CI" {% ifequal country "CI" %} selected="{{ country }}" {% endifequal %}>Cote d'Ivoire</option>
+									    <option value="HR" {% ifequal country "HR" %} selected="{{ country }}" {% endifequal %}>Croatia (Hrvatska)</option>
+									    <option value="CU" {% ifequal country "CU" %} selected="{{ country }}" {% endifequal %}>Cuba</option>
+									    <option value="CY" {% ifequal country "CY" %} selected="{{ country }}" {% endifequal %}>Cyprus</option>
+									    <option value="CZ" {% ifequal country "CZ" %} selected="{{ country }}" {% endifequal %}>Czech Republic</option>
+									    <option value="DK" {% ifequal country "DK" %} selected="{{ country }}" {% endifequal %}>Denmark</option>
+									    <option value="DJ" {% ifequal country "DJ" %} selected="{{ country }}" {% endifequal %}>Djibouti</option>
+									    <option value="DM" {% ifequal country "DM" %} selected="{{ country }}" {% endifequal %}>Dominica</option>
+									    <option value="DO" {% ifequal country "DO" %} selected="{{ country }}" {% endifequal %}>Dominican Republic</option>
+									    <option value="TP" {% ifequal country "TP" %} selected="{{ country }}" {% endifequal %}>East Timor</option>
+									    <option value="EC" {% ifequal country "EC" %} selected="{{ country }}" {% endifequal %}>Ecuador</option>
+									    <option value="EG" {% ifequal country "EG" %} selected="{{ country }}" {% endifequal %}>Egypt</option>
+									    <option value="SV" {% ifequal country "SV" %} selected="{{ country }}" {% endifequal %}>El Salvador</option>
+									    <option value="GQ" {% ifequal country "GQ" %} selected="{{ country }}" {% endifequal %}>Equatorial Guinea</option>
+									    <option value="ER" {% ifequal country "ER" %} selected="{{ country }}" {% endifequal %}>Eritrea</option>
+									    <option value="EE" {% ifequal country "EE" %} selected="{{ country }}" {% endifequal %}>Estonia</option>
+									    <option value="ET" {% ifequal country "ET" %} selected="{{ country }}" {% endifequal %}>Ethiopia</option>
+									    <option value="FK" {% ifequal country "FK" %} selected="{{ country }}" {% endifequal %}>Falkland Islands (Malvinas)</option>
+									    <option value="FO" {% ifequal country "FO" %} selected="{{ country }}" {% endifequal %}>Faroe Islands</option>
+									    <option value="FJ" {% ifequal country "FJ" %} selected="{{ country }}" {% endifequal %}>Fiji</option>
+									    <option value="FI" {% ifequal country "FI" %} selected="{{ country }}" {% endifequal %}>Finland</option>
+									    <option value="FR" {% ifequal country "FR" %} selected="{{ country }}" {% endifequal %}>France</option>
+									    <option value="FX" {% ifequal country "FX" %} selected="{{ country }}" {% endifequal %}>France, Metropolitan</option>
+									    <option value="GF" {% ifequal country "GF" %} selected="{{ country }}" {% endifequal %}>French Guiana</option>
+									    <option value="PF" {% ifequal country "PF" %} selected="{{ country }}" {% endifequal %}>French Polynesia</option>
+									    <option value="TF" {% ifequal country "TF" %} selected="{{ country }}" {% endifequal %}>French Southern Territories</option>
+									    <option value="GA" {% ifequal country "GA" %} selected="{{ country }}" {% endifequal %}>Gabon</option>
+									    <option value="GM" {% ifequal country "GM" %} selected="{{ country }}" {% endifequal %}>Gambia</option>
+									    <option value="GE" {% ifequal country "GE" %} selected="{{ country }}" {% endifequal %}>Georgia</option>
+									    <option value="DE" {% ifequal country "DE" %} selected="{{ country }}" {% endifequal %}>Germany</option>
+									    <option value="GH" {% ifequal country "GH" %} selected="{{ country }}" {% endifequal %}>Ghana</option>
+									    <option value="GI" {% ifequal country "GI" %} selected="{{ country }}" {% endifequal %}>Gibraltar</option>
+									    <option value="GR" {% ifequal country "GR" %} selected="{{ country }}" {% endifequal %}>Greece</option>
+									    <option value="GL" {% ifequal country "GL" %} selected="{{ country }}" {% endifequal %}>Greenland</option>
+									    <option value="GD" {% ifequal country "GD" %} selected="{{ country }}" {% endifequal %}>Grenada</option>
+									    <option value="GP" {% ifequal country "GP" %} selected="{{ country }}" {% endifequal %}>Guadeloupe</option>
+									    <option value="GU" {% ifequal country "GU" %} selected="{{ country }}" {% endifequal %}>Guam</option>
+									    <option value="GT" {% ifequal country "GT" %} selected="{{ country }}" {% endifequal %}>Guatemala</option>
+									    <option value="GN" {% ifequal country "GN" %} selected="{{ country }}" {% endifequal %}>Guinea</option>
+									    <option value="GW" {% ifequal country "GW" %} selected="{{ country }}" {% endifequal %}>Guinea-Bissau</option>
+									    <option value="GY" {% ifequal country "GY" %} selected="{{ country }}" {% endifequal %}>Guyana</option>
+									    <option value="HT" {% ifequal country "HT" %} selected="{{ country }}" {% endifequal %}>Haiti</option>
+									    <option value="HM" {% ifequal country "HM" %} selected="{{ country }}" {% endifequal %}>Heard and Mc Donald Islands</option>
+									    <option value="VA" {% ifequal country "VA" %} selected="{{ country }}" {% endifequal %}>Holy See (Vatican City State)</option>
+									    <option value="HN" {% ifequal country "HN" %} selected="{{ country }}" {% endifequal %}>Honduras</option>
+									    <option value="HK" {% ifequal country "HK" %} selected="{{ country }}" {% endifequal %}>Hong Kong</option>
+									    <option value="HU" {% ifequal country "HU" %} selected="{{ country }}" {% endifequal %}>Hungary</option>
+									    <option value="IS" {% ifequal country "IS" %} selected="{{ country }}" {% endifequal %}>Iceland</option>
+									    <option value="IN" {% ifequal country "IN" %} selected="{{ country }}" {% endifequal %}>India</option>
+									    <option value="ID" {% ifequal country "ID" %} selected="{{ country }}" {% endifequal %}>Indonesia</option>
+									    <option value="IR" {% ifequal country "IR" %} selected="{{ country }}" {% endifequal %}>Iran (Islamic Republic of)</option>
+									    <option value="IQ" {% ifequal country "IQ" %} selected="{{ country }}" {% endifequal %}>Iraq</option>
+									    <option value="IE" {% ifequal country "IE" %} selected="{{ country }}" {% endifequal %}>Ireland</option>
+									    <option value="IL" {% ifequal country "IL" %} selected="{{ country }}" {% endifequal %}>Israel</option>
+									    <option value="IT" {% ifequal country "IT" %} selected="{{ country }}" {% endifequal %}>Italy</option>
+									    <option value="JM" {% ifequal country "JM" %} selected="{{ country }}" {% endifequal %}>Jamaica</option>
+									    <option value="JP" {% ifequal country "JP" %} selected="{{ country }}" {% endifequal %}>Japan</option>
+									    <option value="JO" {% ifequal country "JO" %} selected="{{ country }}" {% endifequal %}>Jordan</option>
+									    <option value="KZ" {% ifequal country "KZ" %} selected="{{ country }}" {% endifequal %}>Kazakhstan</option>
+									    <option value="KE" {% ifequal country "KE" %} selected="{{ country }}" {% endifequal %}>Kenya</option>
+									    <option value="KI" {% ifequal country "KI" %} selected="{{ country }}" {% endifequal %}>Kiribati</option>
+									    <option value="KP" {% ifequal country "KP" %} selected="{{ country }}" {% endifequal %}>Korea, Democratic People's Republic of</option>
+									    <option value="KR" {% ifequal country "KR" %} selected="{{ country }}" {% endifequal %}>Korea, Republic of</option>
+									    <option value="KW" {% ifequal country "KW" %} selected="{{ country }}" {% endifequal %}>Kuwait</option>
+									    <option value="KG" {% ifequal country "KG" %} selected="{{ country }}" {% endifequal %}>Kyrgyzstan</option>
+									    <option value="LA" {% ifequal country "LA" %} selected="{{ country }}" {% endifequal %}>Lao People's Democratic Republic</option>
+									    <option value="LV" {% ifequal country "LV" %} selected="{{ country }}" {% endifequal %}>Latvia</option>
+									    <option value="LB" {% ifequal country "LB" %} selected="{{ country }}" {% endifequal %}>Lebanon</option>
+									    <option value="LS" {% ifequal country "LS" %} selected="{{ country }}" {% endifequal %}>Lesotho</option>
+									    <option value="LR" {% ifequal country "LR" %} selected="{{ country }}" {% endifequal %}>Liberia</option>
+									    <option value="LY" {% ifequal country "LY" %} selected="{{ country }}" {% endifequal %}>Libyan Arab Jamahiriya</option>
+									    <option value="LI" {% ifequal country "LI" %} selected="{{ country }}" {% endifequal %}>Liechtenstein</option>
+									    <option value="LT" {% ifequal country "LT" %} selected="{{ country }}" {% endifequal %}>Lithuania</option>
+									    <option value="LU" {% ifequal country "LU" %} selected="{{ country }}" {% endifequal %}>Luxembourg</option>
+									    <option value="MO" {% ifequal country "MO" %} selected="{{ country }}" {% endifequal %}>Macau</option>
+									    <option value="MK" {% ifequal country "MK" %} selected="{{ country }}" {% endifequal %}>Macedonia, The Former Yugoslav Republic of</option>
+									    <option value="MG" {% ifequal country "MG" %} selected="{{ country }}" {% endifequal %}>Madagascar</option>
+									    <option value="MW" {% ifequal country "MW" %} selected="{{ country }}" {% endifequal %}>Malawi</option>
+									    <option value="MY" {% ifequal country "MY" %} selected="{{ country }}" {% endifequal %}>Malaysia</option>
+									    <option value="MV" {% ifequal country "MV" %} selected="{{ country }}" {% endifequal %}>Maldives</option>
+									    <option value="ML" {% ifequal country "ML" %} selected="{{ country }}" {% endifequal %}>Mali</option>
+									    <option value="MT" {% ifequal country "MT" %} selected="{{ country }}" {% endifequal %}>Malta</option>
+									    <option value="MH" {% ifequal country "MH" %} selected="{{ country }}" {% endifequal %}>Marshall Islands</option>
+									    <option value="MQ" {% ifequal country "MQ" %} selected="{{ country }}" {% endifequal %}>Martinique</option>
+									    <option value="MR" {% ifequal country "MR" %} selected="{{ country }}" {% endifequal %}>Mauritania</option>
+									    <option value="MU" {% ifequal country "MU" %} selected="{{ country }}" {% endifequal %}>Mauritius</option>
+									    <option value="YT" {% ifequal country "YT" %} selected="{{ country }}" {% endifequal %}>Mayotte</option>
+									    <option value="MX" {% ifequal country "MX" %} selected="{{ country }}" {% endifequal %}>Mexico</option>
+									    <option value="FM" {% ifequal country "FM" %} selected="{{ country }}" {% endifequal %}>Micronesia, Federated States of</option>
+									    <option value="MD" {% ifequal country "MD" %} selected="{{ country }}" {% endifequal %}>Moldova, Republic of</option>
+									    <option value="MC" {% ifequal country "MC" %} selected="{{ country }}" {% endifequal %}>Monaco</option>
+									    <option value="MN" {% ifequal country "MN" %} selected="{{ country }}" {% endifequal %}>Mongolia</option>
+									    <option value="MS" {% ifequal country "MS" %} selected="{{ country }}" {% endifequal %}>Montserrat</option>
+									    <option value="MA" {% ifequal country "MA" %} selected="{{ country }}" {% endifequal %}>Morocco</option>
+									    <option value="MZ" {% ifequal country "MZ" %} selected="{{ country }}" {% endifequal %}>Mozambique</option>
+									    <option value="MM" {% ifequal country "MM" %} selected="{{ country }}" {% endifequal %}>Myanmar</option>
+									    <option value="NA" {% ifequal country "NA" %} selected="{{ country }}" {% endifequal %}>Namibia</option>
+									    <option value="NR" {% ifequal country "NR" %} selected="{{ country }}" {% endifequal %}>Nauru</option>
+									    <option value="NP" {% ifequal country "NP" %} selected="{{ country }}" {% endifequal %}>Nepal</option>
+									    <option value="NL" {% ifequal country "NL" %} selected="{{ country }}" {% endifequal %}>Netherlands</option>
+									    <option value="AN" {% ifequal country "AN" %} selected="{{ country }}" {% endifequal %}>Netherlands Antilles</option>
+									    <option value="NC" {% ifequal country "NC" %} selected="{{ country }}" {% endifequal %}>New Caledonia</option>
+									    <option value="NZ" {% ifequal country "NZ" %} selected="{{ country }}" {% endifequal %}>New Zealand</option>
+									    <option value="NI" {% ifequal country "NI" %} selected="{{ country }}" {% endifequal %}>Nicaragua</option>
+									    <option value="NE" {% ifequal country "NE" %} selected="{{ country }}" {% endifequal %}>Niger</option>
+									    <option value="NG" {% ifequal country "NG" %} selected="{{ country }}" {% endifequal %}>Nigeria</option>
+									    <option value="NU" {% ifequal country "NU" %} selected="{{ country }}" {% endifequal %}>Niue</option>
+									    <option value="NF" {% ifequal country "NF" %} selected="{{ country }}" {% endifequal %}>Norfolk Island</option>
+									    <option value="MP" {% ifequal country "MP" %} selected="{{ country }}" {% endifequal %}>Northern Mariana Islands</option>
+									    <option value="NO" {% ifequal country "NO" %} selected="{{ country }}" {% endifequal %}>Norway</option>
+									    <option value="OM" {% ifequal country "OM" %} selected="{{ country }}" {% endifequal %}>Oman</option>
+									    <option value='PK' {% ifequal country "PK" %} selected="{{ country }}" {% endifequal %}>Pakistan</option>
+									    <option value="PW" {% ifequal country "PW" %} selected="{{ country }}" {% endifequal %}>Palau</option>
+									    <option value="PA" {% ifequal country "PA" %} selected="{{ country }}" {% endifequal %}>Panama</option>
+									    <option value="PG" {% ifequal country "PG" %} selected="{{ country }}" {% endifequal %}>Papua New Guinea</option>
+									    <option value="PY" {% ifequal country "PY" %} selected="{{ country }}" {% endifequal %}>Paraguay</option>
+									    <option value="PE" {% ifequal country "PE" %} selected="{{ country }}" {% endifequal %}>Peru</option>
+									    <option value="PH" {% ifequal country "PH" %} selected="{{ country }}" {% endifequal %}>Philippines</option>
+									    <option value="PN" {% ifequal country "PN" %} selected="{{ country }}" {% endifequal %}>Pitcairn</option>
+									    <option value="PL" {% ifequal country "PL" %} selected="{{ country }}" {% endifequal %}>Poland</option>
+									    <option value="PT" {% ifequal country "PT" %} selected="{{ country }}" {% endifequal %}>Portugal</option>
+									    <option value="PR" {% ifequal country "PR" %} selected="{{ country }}" {% endifequal %}>Puerto Rico</option>
+									    <option value="QA" {% ifequal country "QA" %} selected="{{ country }}" {% endifequal %}>Qatar</option>
+									    <option value="RE" {% ifequal country "RE" %} selected="{{ country }}" {% endifequal %}>Reunion</option>
+									    <option value="RO" {% ifequal country "RO" %} selected="{{ country }}" {% endifequal %}>Romania</option>
+									    <option value="RU" {% ifequal country "RU" %} selected="{{ country }}" {% endifequal %}>Russian Federation</option>
+									    <option value="RW" {% ifequal country "RW" %} selected="{{ country }}" {% endifequal %}>Rwanda</option>
+									    <option value="KN" {% ifequal country "KN" %} selected="{{ country }}" {% endifequal %}>Saint Kitts and Nevis</option>
+									    <option value="LC" {% ifequal country "LC" %} selected="{{ country }}" {% endifequal %}>Saint LUCIA</option>
+									    <option value="VC" {% ifequal country "VC" %} selected="{{ country }}" {% endifequal %}>Saint Vincent and the Grenadines</option>
+									    <option value="WS" {% ifequal country "WS" %} selected="{{ country }}" {% endifequal %}>Samoa</option>
+									    <option value="SM" {% ifequal country "SM" %} selected="{{ country }}" {% endifequal %}>San Marino</option>
+									    <option value="ST" {% ifequal country "ST" %} selected="{{ country }}" {% endifequal %}>Sao Tome and Principe</option>
+									    <option value="SA" {% ifequal country "SA" %} selected="{{ country }}" {% endifequal %}>Saudi Arabia</option>
+									    <option value="SN" {% ifequal country "SN" %} selected="{{ country }}" {% endifequal %}>Senegal</option>
+									    <option value="RS" {% ifequal country "RS" %} selected="{{ country }}" {% endifequal %}>Serbia, Republic of</option>
+									    <option value="SC" {% ifequal country "SC" %} selected="{{ country }}" {% endifequal %}>Seychelles</option>
+									    <option value="SL" {% ifequal country "SL" %} selected="{{ country }}" {% endifequal %}>Sierra Leone</option>
+									    <option value="SG" {% ifequal country "SG" %} selected="{{ country }}" {% endifequal %}>Singapore</option>
+									    <option value="SK" {% ifequal country "SK" %} selected="{{ country }}" {% endifequal %}>Slovakia (Slovak Republic)</option>
+									    <option value="SI" {% ifequal country "SI" %} selected="{{ country }}" {% endifequal %}>Slovenia</option>
+									    <option value="SB" {% ifequal country "SB" %} selected="{{ country }}" {% endifequal %}>Solomon Islands</option>
+									    <option value="SO" {% ifequal country "SO" %} selected="{{ country }}" {% endifequal %}>Somalia</option>
+									    <option value="ZA" {% ifequal country "ZA" %} selected="{{ country }}" {% endifequal %}>South Africa</option>
+									    <option value="GS" {% ifequal country "GS" %} selected="{{ country }}" {% endifequal %}>South Georgia and the South Sandwich Islands</option>
+									    <option value="ES" {% ifequal country "ES" %} selected="{{ country }}" {% endifequal %}>Spain</option>
+									    <option value="LK" {% ifequal country "LK" %} selected="{{ country }}" {% endifequal %}>Sri Lanka</option>
+									    <option value="SH" {% ifequal country "SH" %} selected="{{ country }}" {% endifequal %}>St. Helena</option>
+									    <option value="PM" {% ifequal country "PM" %} selected="{{ country }}" {% endifequal %}>St. Pierre and Miquelon</option>
+									    <option value="SD" {% ifequal country "SD" %} selected="{{ country }}" {% endifequal %}>Sudan</option>
+									    <option value="SR" {% ifequal country "SR" %} selected="{{ country }}" {% endifequal %}>Suriname</option>
+									    <option value="SJ" {% ifequal country "SJ" %} selected="{{ country }}" {% endifequal %}>Svalbard and Jan Mayen Islands</option>
+									    <option value="SZ" {% ifequal country "SZ" %} selected="{{ country }}" {% endifequal %}>Swaziland</option>
+									    <option value="SE" {% ifequal country "SE" %} selected="{{ country }}" {% endifequal %}>Sweden</option>
+									    <option value="CH" {% ifequal country "CH" %} selected="{{ country }}" {% endifequal %}>Switzerland</option>
+									    <option value="SY" {% ifequal country "SY" %} selected="{{ country }}" {% endifequal %}>Syrian Arab Republic</option>
+									    <option value="TW" {% ifequal country "TW" %} selected="{{ country }}" {% endifequal %}>Taiwan, Province of China</option>
+									    <option value="TJ" {% ifequal country "TJ" %} selected="{{ country }}" {% endifequal %}>Tajikistan</option>
+									    <option value="TZ" {% ifequal country "TZ" %} selected="{{ country }}" {% endifequal %}>Tanzania, United Republic of</option>
+									    <option value="TH" {% ifequal country "TH" %} selected="{{ country }}" {% endifequal %}>Thailand</option>
+									    <option value="TG" {% ifequal country "TG" %} selected="{{ country }}" {% endifequal %}>Togo</option>
+									    <option value="TK" {% ifequal country "TK" %} selected="{{ country }}" {% endifequal %}>Tokelau</option>
+									    <option value="TO" {% ifequal country "TO" %} selected="{{ country }}" {% endifequal %}>Tonga</option>
+									    <option value="TT" {% ifequal country "TT" %} selected="{{ country }}" {% endifequal %}>Trinidad and Tobago</option>
+									    <option value="TN" {% ifequal country "TN" %} selected="{{ country }}" {% endifequal %}>Tunisia</option>
+									    <option value="TR" {% ifequal country "TR" %} selected="{{ country }}" {% endifequal %}>Turkey</option>
+									    <option value="TM" {% ifequal country "TM" %} selected="{{ country }}" {% endifequal %}>Turkmenistan</option>
+									    <option value="TC" {% ifequal country "TC" %} selected="{{ country }}" {% endifequal %}>Turks and Caicos Islands</option>
+									    <option value="TV" {% ifequal country "TV" %} selected="{{ country }}" {% endifequal %}>Tuvalu</option>
+									    <option value="UG" {% ifequal country "UG" %} selected="{{ country }}" {% endifequal %}>Uganda</option>
+									    <option value="UA" {% ifequal country "UA" %} selected="{{ country }}" {% endifequal %}>Ukraine</option>
+									    <option value="AE" {% ifequal country "AE" %} selected="{{ country }}" {% endifequal %}>United Arab Emirates</option>
+									    <option value="GB" {% ifequal country "GB" %} selected="{{ country }}" {% endifequal %}>United Kingdom</option>
+									    <option value="UM" {% ifequal country "UM" %} selected="{{ country }}" {% endifequal %}>United States Minor Outlying Islands</option>
+									    <option value="UY" {% ifequal country "UY" %} selected="{{ country }}" {% endifequal %}>Uruguay</option>
+									    <option value="UZ" {% ifequal country "UZ" %} selected="{{ country }}" {% endifequal %}>Uzbekistan</option>
+									    <option value="VU" {% ifequal country "VU" %} selected="{{ country }}" {% endifequal %}>Vanuatu</option>
+									    <option value="VE" {% ifequal country "VE" %} selected="{{ country }}" {% endifequal %}>Venezuela</option>
+									    <option value="VN" {% ifequal country "VN" %} selected="{{ country }}" {% endifequal %}>Viet Nam</option>
+									    <option value="VG" {% ifequal country "VG" %} selected="{{ country }}" {% endifequal %}>Virgin Islands (British)</option>
+									    <option value="VI" {% ifequal country "VI" %} selected="{{ country }}" {% endifequal %}>Virgin Islands (U.S.)</option>
+									    <option value="WF" {% ifequal country "WF" %} selected="{{ country }}" {% endifequal %}>Wallis and Futuna Islands</option>
+									    <option value="EH" {% ifequal country "EH" %} selected="{{ country }}" {% endifequal %}>Western Sahara</option>
+									    <option value="YE" {% ifequal country "YE" %} selected="{{ country }}" {% endifequal %}>Yemen</option>
+									    <option value="YU" {% ifequal country "YU" %} selected="{{ country }}" {% endifequal %}>Yugoslavia</option>
+									    <option value="ZM" {% ifequal country "ZM" %} selected="{{ country }}" {% endifequal %}>Zambia</option>
+									    <option value="ZW" {% ifequal country "ZW" %} selected="{{ country }}" {% endifequal %}>Zimbabwe</option>
+									</select>
+								</p>
+								<p>
+									<label>Location: </label>
+									<input type="text" name="location" value="{{ location }}" />
+								</p>
+								<p>
+									<label>Height in inches: </label>
+									<input type="number" name="height" value="{{ height }}" />
+								</p>
+								<p>
+									<label>Weight in pounds: </label>
+									<input type="number" name="weight" value="{{ weight }}" />
+								</p>
+								<p>
+									<label>Are you a smoker?
+									<input type="radio" name="smoker" value="False" {% if not smoker %} checked="{{ smoker }}" {% endif %}> No
+									<input type="radio" name="smoker" value="True" {% if smoker %} checked="{{ smoker }}" {% endif %}> Yes
+								</p>
+								<input type="submit" value="{{ submit }}" class="register-button" />
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+
+{% endblock body %}
+
+{% block js.custom %}
+		<script type="text/javascript">
+			$('#datepicker').datepicker({
+			maxDate: '-13Y',
+			minDate: '-120Y',
+			yearRange: '-87Y:2010',
+			changeMonth: true,
+			changeYear: true
+		});
+		</script>
+{% endblock js.custom %}

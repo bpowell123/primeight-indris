@@ -1,0 +1,74 @@
+{% extends "layout_overrides.html" %}
+{% block body %}
+<div class="grid_16">
+<div class="rightpane">
+<div>
+	<form name="newitem2" action="/newitem/" method="post">
+	<input name="newName" type="hidden" value="Bike Across The USA">
+<p><h5>Bike Across The USA</h5>
+&nbsp;<a class="button green right up" {% ifnotequal currentUser "" %}href="javascript: submitform()"{% endifnotequal %}>Add To My List</a></p>
+	</form>
+</div>
+<div>
+	<span>While you won’t find crowds of people at your local bike store who have made this amazing journey, those who have will tell you it was a life-changing experience, and almost always a positive one. If you’re thinking of trying it out for yourself, talk to as many people as you can to get tips about training, preparation, what to take, the best route, and what it’s like to ride between 50 and 100 miles, day after day, for weeks or months at a time. There are some great online forums with plenty of friendly people and tons of information. Solid preparation and knowing what to expect from yourself, your systems, and the experience itself will help to guarantee your success...</span>
+	<nobr> <span style="color: green;"> - <a target="_blank" href="http://outdoors.whatitcosts.com/bike-across-america.htm"><span>WhatItCosts.com</span></a> </span> </nobr>
+	<hr>
+</div>
+<div>
+<p><h5>Facts & Information</h5></p>
+<p><h5>Cost:</h5> $2,500 to $8,600</p>
+<p><h5>Best Time:</h5> Summer</p>
+<p><h5>Category:</h5> Adventure</p>
+<p><h5>More Info:</h5> <a href="http://www.adventurecycling.org/routes/nbrn/USBRSCorridorMap.pdf" target="new">US Bicycle Route System</a></p>
+</div>
+<div style="left:auto;right:auto;textalign:center;">
+	<hr>
+</div>
+<div>
+<p><h5>Photos</h5></p>
+<p>&nbsp;</p>
+</div>
+<div style="left:auto;right:auto;textalign:center;">
+	<iframe
+	   src="http://www.panoramio.com/wapi/template/photo_list.html?tag=roadbike&amp;width=500&amp;height=300&amp;list_size=7&amp;position=bottom&amp;bgcolor=%FFFFFF"
+	   frameborder="0" width="500" height="300" scrolling="no" marginwidth="0" marginheight="0">
+	</iframe>
+	<hr>
+</div>
+<div>
+<p><h5>Reviews from around the web</h5></p>
+<p>&nbsp;</p>
+
+</div>
+<div style="left:auto;right:auto;textalign:center;">
+	<hr>
+</div>
+<div>
+<p><h5>Reviews By DOwhit Users</h5></p>
+<p>&nbsp;</p>
+</div>
+<div style="left:auto;right:auto;textalign:center;">
+	<hr>
+</div>
+<div>
+<p><h5>Related Activities</h5></p>
+<p>&nbsp;</p>
+</div>
+<div style="left:auto;right:auto;textalign:center;">
+	<hr>
+</div>
+</div>
+<div>
+<p></p>
+</div>
+</div>
+{% endblock body %}
+
+{% block js.custom %}
+<script type="text/javascript">
+function submitform()
+{
+  document.newitem2.submit();
+}
+</script>
+{% endblock js.custom %}

@@ -1,0 +1,164 @@
+{% extends "layout_overrides.html" %}
+
+{% block header %}
+		<!-- BEGIN header -->
+		<div id="main-wrap">
+<div id="header-wrap-landing">
+          {% block header_content %}{% include 'shared/header.html' %}{% endblock header_content %}
+          {% block header_menu %}{% endblock header_menu%}
+</div>
+
+<div id="main">
+<div class="container_16" style="margin-top:134px;padding-top:10px;<!-- min-height:800px-->">
+	<div class="clear"></div>
+      <!-- </div> -->
+      <!-- END header -->
+{% endblock header %}
+		
+{# {% block header_menu %} #}
+
+{# {% endblock %} #}
+
+{# {% block body_content %} #}
+
+{# {% endblock %} #}
+
+
+{% block css.custom %}
+{% endblock css.custom %}
+
+{% block body %}
+
+        <!-- BEGIN body -->
+        <div class="content">
+	        <div id="landing-wrap">
+	        <div>
+	        	<h3>WHAT'S ON</h3>
+	        	<h1>YOUR BUCKET LIST?</h1>
+	        </div>
+	        </div>
+	        <div id="landing-textbox">
+	        	<p>Whits are the dreams that together make up your life's Bucket List. We'll help you create, track, document and share all the Whits that you have always wanted to Do.</p>
+	        	<a href="http://vimeo.com/29173891" rel="prettyPhoto" id="btn-play" title="Whits are the dreams that together make up your life's Bucket List. We'll help you create, track, document and share all the Whits that you have always wanted to Do."></a><span>Play Video</span>
+	        </div>
+	        
+			<div class="block" id="betaform" {% ifnotequal currentUser "" %}style="visibility:hidden"{% endifnotequal %}>
+				<form method="post" action="" id="signupform">
+					<fieldset>
+						<p>					
+<!-- 							<input id="datepicker" class="txtfld" type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" name="dob" size="22" value="Birthdate" onfocus="if (this.value==this.defaultValue) this.value = ''" onblur="if (this.value=='') this.value = this.defaultValue"> -->
+						</p>
+<!-- 						<p> -->
+<!-- 							<input class="txtfld required email" size="22" type="email" name="email" value="Email" onfocus="if (this.value==this.defaultValue) this.value = ''" onblur="if (this.value=='') this.value = this.defaultValue"> -->
+<!-- 						</p> -->
+						<p>
+<!-- 							<select class="txtflddrop" type="text" name="gender" id="gender">
+							  <option value="Gender">Gender</option>
+							  <option value="Male">Male</option>
+							  <option value="Female">Female</option>
+							</select> -->
+							
+						</p>
+      					<p>
+      						<a href="#" rel="popup_login" id="btn_Start" class="janrainEngage">START YOUR CLOCK</a>  
+<!-- 							<input type="submit" id="btn_Start" class="janrainEngage" value="START YOUR CLOCK"/> -->
+						</p>
+					</fieldset>
+				</form>
+			</div>
+			<div class="content_box">
+				<div class="grid_5" style="width: 250px;">
+					<div class="def_box" id="do">
+						<h3>DO</h3> <h4><i>VERB</i> &nbsp;\ DOO \</h4>
+						<p>: to perform or execute (an act, duty, role, etc.); to accomplish.</p>
+					</div>
+					<div class="def_box" id="whit">
+						<h3>WHIT</h3> <h4><i>NOUN</i> &nbsp;\ HWIT, WIT \</h4>
+						<p>: a particle; bit; shred; small amount; drop in the bucket.</p>
+					</div>
+					<div id="plus"></div>
+			        <div id="twit">Like it? &nbsp;&nbsp;&nbsp;Love it? &nbsp;&nbsp;&nbsp;Plus it!<br>
+			                <iframe src="http://www.facebook.com/plugins/like.php?app_id=202956143090706&amp;href=http%3A%2F%2Fwww.facebook.com/pages/DOwhitcom/139597339416927&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=tahoma&amp;height=60" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:60px;" allowtransparency="true"></iframe>
+			                <iframe src="http://platform.twitter.com/widgets/tweet_button.html#_=1312484121981&amp;count=vertical&amp;id=twitter_tweet_button_0&amp;lang=en&amp;original_referer=http%3A%2F%2Fwww.dowhit.com%2F&amp;text=dowhit%20-%20What's%20on%20your%20Bucket%20List%3F&amp;url=http%3A%2F%2Fwww.dowhit.com%2F&amp;via=DOwhitdotcom" allowtransparency="true" frameborder="0" scrolling="no" class="twitter-share-button twitter-count-vertical" style="width: 55px; height: 62px; " title="Twitter For Websites: Tweet Button"></iframe>
+			            	<div id="___plusone_0" style="height: 60px; width: 50px; display: inline-block; text-indent: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; float: none; background-position: initial initial; background-repeat: initial initial; "><iframe allowtransparency="true" frameborder="0" hspace="0" id="I1_1312484122128" marginheight="0" marginwidth="0" name="I1_1312484122128" scrolling="no" src="https://plusone.google.com/u/0/_/+1/fastbutton?url=http%3A%2F%2Fwww.dowhit.com%2F&amp;size=tall&amp;count=true&amp;db=1&amp;hl=en-US&amp;jsh=r%3Bgc%2F22821001-a70f00f0#id=I1_1312484122128&amp;parent=http%3A%2F%2Fwww.dowhit.com&amp;rpctoken=564895295&amp;_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe" style="width: 50px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; height: 60px; position: static; left: 0px; top: 0px; visibility: visible; " tabindex="-1" vspace="0" width="100%"></iframe></div>
+			        </div>
+				</div>
+				<div class="grid_8">
+					<div class="box_content">
+						<p><span class="p_head">Because "Someday" is not a day of the week. </span> Create your profile and get your personally-tailored countdown clock to remind you of the precious days that are left to complete your bucket list. With this information, you’ll be able to empty your bucket before you kick it.</p>
+						<div class="grid_3" style="width: 118px;">
+							<img src="/static/images/rotate_surfer.png" width="118" height="118"  alt="Need Bucket List ideas?" />
+						</div>
+						<div class="grid_6">
+							<p  id="right_blurb">
+								<span class="p_head">Running out of Bucket List ideas? </span> See our featured whits and browse others’ lists. Find out how they were able to succeed in completing the whits that interest you. Read stories and get tips on how to complete these whits for yourself.
+							</p>
+						</div> 
+						<div class="clear"></div>
+						<div id="tag_cloud">
+						<p><span class="p_head">Find inspiration to fill your Bucket List:</span>
+						   <a href="#1" style="font-size:10px;text-decoration:none; color: #989897;">Take a hot air balloon ride</a>  
+						   <a href="#2" style="font-size:12px;text-decoration:none; color: #989897;">Watch every Clint Eastwood movie</a>  
+						   <a href="#3" style="font-size:13px;text-decoration:none; color: #E15F25;">Tour the ruins in Tulum</a>  
+						   <a href="#4" style="font-size:11px;text-decoration:none; color: #E15F25;">Go horseback riding through England</a>  
+						   <a href="#5" style="font-size:17px;text-decoration:none; color: #989897;">Cross the Equator by foot</a>  
+						   <a href="#6" style="font-size:15px;text-decoration:none; color: #E15F25;">Design and build my own house</a>  
+						   <a href="#7" style="font-size:14px;text-decoration:none; color: #1D6274;">Travel to Africa and go on safari</a>  
+						   <a href="#8" style="font-size:13px;text-decoration:none; color: #989897;">See the pyramids</a>  
+						   <a href="#9" style="font-size:13px;text-decoration:none; color: #E15F25;">Volunteer in a foreign country</a>  
+						   <a href="#10" style="font-size:14px;text-decoration:none; color: #989897;">Have a beer in every bar in Ireland</a>  
+						   <a href="#11" style="font-size:12px;text-decoration:none; color: #989897;">Take French Classes</a>  
+						   <a href="#12" style="font-size:15px;text-decoration:none; color: #989897;">Waterski on Lake Tahoe</a>  
+						   <a href="#13" style="font-size:17px;text-decoration:none; color: #989897;">Publish a book on cooking</a>  
+						   <a href="#14" style="font-size:17px;text-decoration:none; color: #1D6274;">Learn how to fly</a>  
+						   <a href="#15" style="font-size:12px;text-decoration:none; color: #E15F25;">Visit all of the National Parks</a>  
+						   <a href="#16" style="font-size:15px;text-decoration:none; color: #989897;">Go back to college</a>  
+						   <a href="#17" style="font-size:15px;text-decoration:none; color: #E15F25;">Visit Mount Rushmore</a>  
+						   <a href="#18" style="font-size:17px;text-decoration:none; color: #E15F25;">Learn to surf in Hawaii</a>
+						 </p>  
+						</div>
+					</div>
+				</div>
+				<div class="listpanel">
+					<div class="data" id="" style="padding: 20px">
+					<p>Is running a marathon on your Bucket List?  Tell us all about your experience and add the other items from your list.</p>
+					<p>Click "Start Your Clock", complete your profile and claim your Beta invitation by entering the code below when prompted.</p>
+					<p><center><b><font size="+1">PITT262</font></b></center></p>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+        </div>
+{% endblock body %}
+
+{% block js.custom %}
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" language="javascript">
+       
+   window.onload = function() {
+	    
+		//Modal List Window
+		var $dialog = $('.listpanel')
+			.dialog({
+				autoOpen: false,
+				draggable: false,
+				resizable: false,
+				width: 500,
+				modal: true,
+				title: 'Welcome Pittsburgh Marathon Runners and Volunteers'
+			});
+		
+	   var hash = window.location.hash;
+	   if (hash.substring(1) == 'pghmarathon') {
+		   $dialog.dialog('open');
+	   }
+      }
+ </script>
+{% endblock js.custom %}
+
+
+
+
+
+
+

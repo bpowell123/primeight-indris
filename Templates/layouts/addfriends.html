@@ -1,0 +1,40 @@
+{% extends "layout_overrides.html" %}
+{% block body %}
+			<div class="grid_7">
+				<div class="box">
+					<div class="block" id="forms">
+						<form method="post" action="">
+							<fieldset>
+								<legend>Add Friends</legend>
+								<p>
+									<label>User: </label>
+									<select name="User">
+										<option value="None">Select User...</option>
+										{% for k, v in ulist.items %}
+									    <option value="{{ k }}">{{ v }}</option>
+									    {% endfor %}
+									</select>
+								</p>
+								<p>
+									<label>Friend: </label>
+									<select name="Friend">
+										<option value="None">Select Friend...</option>
+										{% for k, v in ulist.items %}
+									    <option value="{{ k }}">{{ v }}</option>
+									    {% endfor %}
+									</select>
+								</p>
+								<p>
+									<label>Status
+									<input type="radio" name="Status" value="pending"> pending
+									<input type="radio" name="Status" value="approved"> approved
+								</p>
+								<input type="submit" value="Add Friend" class="button" />
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+
+
+{% endblock body %}

@@ -1,0 +1,90 @@
+
+<!-- Logo Header -->
+		<div class="container_16" style="background:transparent;height:100px;">
+			<div class="grid_5">
+				<h1 id="branding" style="background:transparent;">
+					<a href="/" alt="DOwhit Home"><img src="/static/images/dowhitGY.png" /></a>
+				</h1>
+			</div>
+			<div class="grid_11">
+				<a href="#" alt="Clock Settings"><div id="glowingLayout"></div></a>
+				<span id="imageLayout">
+				    <span class="image{d10000}"></span>
+				    <span class="image{d1000}"></span>
+				    <span class="image{d100}"></span>
+				    <span class="image{d10}"></span>
+				    <span class="image{d1}"></span>
+				    <span class="imageDay"></span>
+				    <span class="image{h10}"></span>
+				    <span class="image{h1}"></span>
+				    <span class="imageHour"></span>
+				    <span class="image{m10}"></span>
+				    <span class="image{m1}"></span>
+				    <span class="imageMinute"></span>
+				    <span class="image{s10}"></span>
+				    <span class="image{s1}"></span>
+				    <span class="imageSecond"></span>
+				</span>
+<!--				<div class="countdown">-->
+<!--					<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="600" height="80" id="Countdown">-->
+<!--						<param name="allowScriptAccess" value="sameDomain"></param>-->
+<!--						<param name="allowFullScreen" value="false"></param>-->
+<!--						<param name="movie" value="/static/images/Countdown.swf"></param>-->
+<!--						<param name="quality" value="high"></param>-->
+<!--						<param name="bgcolor" value="#ffffff"></param>-->
+<!--						<param name="FlashVars" value="y={{ y }}&m={{ m }}&d={{ d }}&h={{ h }}&mn={{ mn }}&s={{ s }}"></param>-->
+<!--						<param name="wmode" value="transparent">-->
+<!--						<embed src="/static/images/Countdown.swf" FlashVars="y={{ y }}&m={{ m }}&d={{ d }}&h={{ h }}&mn={{ mn }}&s={{ s }}" quality="high" bgcolor="#ffffff" width="600" height="80" name="Countdown" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" wmode="transparent"></embed>-->
+<!--					</object>-->
+					 <!--  <div><span id="countdown1">{{ countdown_date }}</span></div> -->
+<!--				</div>-->
+			</div>
+			<div class="clear"></div>
+
+<!-- Navigation Bar -->
+
+			<div class="grid_17">
+				<ul class="nav main">
+					<li>
+						<a href="#">HOME</a>
+					</li>
+					<li>
+						<a href="#">SIGN IN</a>
+					</li>
+					<li>
+						<a href="#">BUCKET TALK</a>
+					</li>
+					{% ifnotequal currentUser "" %}
+					{% ifnotequal currentUser.display_name None %}
+					<li>
+						<a href="/list/">{{ currentUser.display_name }}'s Whit List</a>
+					</li>
+					{% endifnotequal %}
+					{% endifnotequal %}
+<!--					<li class="secondary">-->
+<!--						{{ logLink|safe }}-->
+<!--					</li>-->
+					<li class="secondary">
+						{{ profileLink|safe }}
+						<ul>
+							<li>
+								<a href="/profile">Account Settings</a>
+							</li>
+							<li>
+								<a href="#">Privacy Settings</a>
+							</li>
+							<li>
+								<a href="#">Clock Settings</a>
+							</li>
+							<li>
+								<a href="#">Whit List Settings</a>
+							</li>
+							<li>
+								<a href="#">Help Center</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+

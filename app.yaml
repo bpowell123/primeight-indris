@@ -1,0 +1,35 @@
+application: primeight-indris
+version: 11
+runtime: python
+api_version: 1
+
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /(.*\.(gif|png|jpg))
+  static_files: static/\1
+  upload: static/(.*\.(gif|png|jpg))
+
+- url: /.*
+  script: main.py
+
+- url: /favicon.ico
+  static_files: static/images/favicon.ico
+  upload: static/images/favicon.ico
+  
+- url: /apple-touch-icon.png
+  static_files: static/images/apple-touch-icon.png
+  upload: static/images/apple-touch-icon.png
+  
+- url: /apple-touch-icon-precomposed.png
+  static_files: static/images/apple-touch-icon-precomposed.png
+  upload: static/images/apple-touch-icon-precomposed.png
+
+builtins:
+- datastore_admin: on
+- remote_api: on
+

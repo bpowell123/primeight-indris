@@ -1,0 +1,39 @@
+{% extends "layout_overrides.html" %}
+
+{% block css.custom %}
+{% endblock css.custom %}
+
+{% block body %}
+
+	<div class="grid_16" style="width:100%;margin-left:auto;margin-right:auto;text-align:center;">
+		<div class="box">
+			<div class="block">
+				<form method="post" action="">
+					<p><label for="dob">Date of Birth: </label></p>
+					<p><input type="text" name="dob" id="datepicker" value="{{ dob }}"></p>
+					<input type="submit" value="ENTER" class="register-button" />
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock body %}
+
+{% block js.custom %}
+<script type="text/javascript">
+function submitform()
+{
+  document.newitem2.submit();
+}
+</script>
+		<script type="text/javascript">
+			$('#datepicker').datepicker({
+			maxDate: '-13Y',
+			minDate: '-120Y',
+			yearRange: '-100Y:2010',
+			changeMonth: true,
+			changeYear: true
+		});
+		</script>
+{% endblock js.custom %}

@@ -1,0 +1,83 @@
+.countdown
+{
+font-size: 3.5em;
+font-family: 'helvetica', 'verdana', 'bitstream vera serif', georgia, 'lucida fax', 'calisto MT', 'century schoolbook', 'bookman old style', serif;
+color: #009AD5;/*rgb(17, 17, 85);*/
+background-image: "";/*initial;*/
+background-attachment: initial;
+background-origin: initial;
+background-clip: initial;
+background-color: #fff;/*rgb(234, 234, 245);*/
+border-top-width: 0px;
+border-top-style: solid;
+border-top-color: rgb(70, 70, 70);
+border-right-width: 0px;
+border-right-style: solid;
+border-right-color: rgb(10, 10, 10);
+border-bottom-width: 0px;
+border-bottom-style: solid;
+border-bottom-color: rgb(18, 18, 18);
+border-left-width: 0px;
+border-left-style: solid;
+border-left-color: rgb(64, 64, 64);
+padding-top: 15px;
+padding-right: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+margin-top: 0px;
+margin-bottom: 0px;
+margin-left: auto;
+margin-right: 0px;
+text-align: right;
+vertical-align:middle;
+white-space: nowrap;
+visibility: visible;
+background-position: initial initial;
+background-repeat: initial initial;
+/*width: 681px;*/
+}
+.countdown .y
+{
+width: 45px;
+}
+.countdown .d
+{
+width: 45px;
+}
+.countdown .h
+{
+width: 45px;
+}
+.countdown .m
+{
+width: 45px;
+}
+.countdown .s
+{
+width: 45px;
+}
+.countdown .l
+{
+visibility: visible;
+width: 21px;
+}
+.countdown .left
+{
+width: 21px;
+}
+.countdown .top
+{
+width: 144px;
+}
+.countdown .bot
+{
+width: 144px;
+}
+.countdown .gapTop
+{
+width: 21px;
+}
+.countdown .gapBot
+{
+width: 21px;
+}

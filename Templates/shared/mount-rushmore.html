@@ -1,0 +1,123 @@
+{% extends "layout_overrides.html" %}
+{% block body %}
+<div class="grid_16">
+<div class="rightpane">
+<div>
+	<form name="newitem2" action="/newitem/" method="post">
+	<input name="newName" type="hidden" value="Mt. Rushmore">
+<p><h5>Mount Rushmore National Memorial</h5>
+13000 Hwy 244 #81, Keystone, SD 57751 (605) 574-3523<a class="button green right up" {% ifnotequal currentUser "" %}href="javascript: submitform()"{% endifnotequal %}>Add To My List</a></p>
+	</form>
+</div>
+<div>
+	<span>Mount Rushmore National Memorial is a sculpture carved into the granite face of Mount Rushmore near Keystone, South Dakota, in the United States. Sculpted by Gutzon Borglum and later by his son Lincoln Borglum, Mount Rushmore features 60 ft sculptures of the heads of former United States presidents (in order from left to right) George Washington, Thomas Jefferson, Theodore Roosevelt and Abraham Lincoln ...</span>
+	<span> - <span style="color: gray;">All text is available under the terms of the GNU Free Documentation License</span> </span>
+	<nobr> <span style="color: green;"> - <a target="_blank" href="http://www.google.com/local_url?q=http://en.wikipedia.org/wiki/Mount_Rushmore&amp;dq=mt+rushmore&amp;cid=13152938159222468034&amp;fb=1&amp;gl=us&amp;hq=mt+rushmore&amp;hnear=mt+rushmore&amp;ved=0CFsQygVIAA&amp;sa=X&amp;ei=fmQPTf6ZGZ_wyAXl4ZG_Cg&amp;s=ANYYN7mlQNdbI2lGMYAby2eH3DUaTYNDIg" class="pp-more-content-link"><span>Wikipedia</span></a> </span> </nobr>
+	<hr>
+</div>
+<div>
+<iframe class="qwiki-player" type="text/html" width="720" height="383" src="http://www.qwiki.com/embed/Mount_Rushmore" frameborder="0" scrolling="no"></iframe> <p>View <a href="http://www.qwiki.com/q/#!/Mount_Rushmore" target="_blank">Mount Rushmore</a> and over 3,000,000 other topics on <a href="http://www.qwiki.com" target="_blank">Qwiki</a>.</p>
+</div>
+<div>
+<p><h5>Facts & Information</h5></p>
+<p><h5>Cost:</h5> Park Admission Free; Parking $8</p>
+<p><h5>Best Time to Visit:</h5> Summer (4th of July)</p>
+<p><h5>Acreage:</h5> 1,278.45</p>
+<p><h5>Category:</h5> National Memorial</p>
+<p><h5>Date Established‎:</h5> 03/03/1925</p>
+<p><h5>More Info:</h5> <a href="http://www.nps.gov/moru" target="new">http://www.nps.gov/moru</a></p>
+<p><a href="http://www.zagat.com/Verticals/PropertyDetails.aspx?VID=32&R=89203" target="new">zagat.com</a>, <a href="http://www.tripadvisor.com/Attraction_Review-g60908-d143767-Reviews-Mount_Rushmore_National_Memorial-Keystone_South_Dakota.html" target="new">tripadvisor.com</a>, <a href="" target="new">10best.com</a></p>
+</div>
+<div style="left:auto;right:auto;textalign:center;">
+	<hr>
+</div>
+<div>
+<p><h5>Photos</h5></p>
+<p>&nbsp;</p>
+</div>
+<div style="left:auto;right:auto;textalign:center;">
+	<iframe
+	   src="http://www.panoramio.com/wapi/template/photo_list.html?tag=mountrushmore&amp;width=500&amp;height=300&amp;list_size=7&amp;position=bottom&amp;bgcolor=%FFFFFF"
+	   frameborder="0" width="500" height="300" scrolling="no" marginwidth="0" marginheight="0">
+	</iframe>
+	<hr>
+</div>
+<div>
+<p><h5>Reviews from around the web</h5></p>
+<p>&nbsp;</p>
+
+</div>
+<div style="left:auto;right:auto;textalign:center;">
+	<hr>
+</div>
+<div>
+<p><h5>Reviews By DOwhit Users</h5></p>
+<p>&nbsp;</p>
+</div>
+<div style="left:auto;right:auto;textalign:center;">
+	<hr>
+</div>
+<div>
+<p><h5>Related Activities</h5></p>
+Journey Museum  ‎ 19 mi NE
+222 New York Street, Rapid City, SD
+10 reviews‎  -  Museum, Tourist Attraction, Entertainment - Tourist...	Storybook Island  ‎ 17 mi NE
+1301 Sheridan Lake Road, Rapid City, SD
+36 reviews‎  -  Visitor Attractions..., Entertainers & Entertainment, Convention Information Bureau
+Dinosaur Park  ‎ 17 mi NE
+940 Skyline Drive, Rapid City, SD
+13 reviews‎  -  Park	Custer Showbarn  ‎ 11 mi SW
+370 W Mount Rushmore Rd, Custer, SD
+Tourist Attraction
+Broken Boot Gold Mine  ‎ 37 mi N
+1200 Pioneer Way, Deadwood, SD
+5 reviews‎  -  Tourist Attraction, Visitor Attractions..., Boots	Crystal Cave Park  ‎ 14 mi NE
+7700 Nameless Cave Road, Rapid City, SD
+8 reviews‎  -  Tourist Attraction, Park
+Black Hills Wild Horse Sanctuary / Institute of Range and American Mustang  ‎ 40 mi S
+12165 Highland Road, Hot Springs, SD
+4 reviews‎  -  Horse Breeder, Travel - Tour Operators	Cosmos Mystery Area  ‎ 3.7 mi NE
+24040 Cosmos Road, Rapid City, SD
+32 reviews‎  -  Tourist Information Center, Tourist Attraction
+Custer State Park  ‎ 11 mi S
+Custer, SD
+113 reviews‎  -  Park	Crazy Horse Memorial
+Mt . Rushmore  ‎
+12151 Avenue of the Chiefs, Crazy Horse, SD 57730-8900
+<p>&nbsp;</p>
+</div>
+<div id="disqus_thread"></div>
+<div style="left:auto;right:auto;textalign:center;">
+</div>
+</div>
+<div>
+<p></p>
+</div>
+</div>
+
+
+{% endblock body %}
+
+{% block js.custom %}
+<script type="text/javascript">
+function submitform()
+{
+  document.newitem2.submit();
+}
+</script>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'dowhit'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+    var disqus_identifier = 'mount-rushmore';
+    var disqus_url = 'http://www.dowhit.com/whits/mount-rushmore/';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+{% endblock js.custom %}

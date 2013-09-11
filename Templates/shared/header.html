@@ -1,0 +1,101 @@
+
+<!-- Logo Header -->
+		<div class="container_16" style="background:transparent;height:100px;">
+			<div style="margin-left: auto; margin-right: auto; text-align: center;">
+			<div class="grid_5">
+				<h1 id="branding" style="background:transparent;">
+					<a href="/"><img src="/static/images/dowhitGY.png"  alt="DOwhit Home of your online Bucket List." /></a>
+				</h1>
+			</div>
+			<div class="grid_11">
+				<a href="#" {% if currentUser %} onclick="shareClock();return false" title="Share Your Clock" {% endif %}><div id="glowingLayout"></div></a>
+				<span id="imageLayout">
+				    <span class="image{d10000}"></span>
+				    <span class="image{d1000}"></span>
+				    <span class="image{d100}"></span>
+				    <span class="image{d10}"></span>
+				    <span class="image{d1}"></span>
+				    <span class="imageDay"></span>
+				    <span class="image{h10}"></span>
+				    <span class="image{h1}"></span>
+				    <span class="imageHour"></span>
+				    <span class="image{m10}"></span>
+				    <span class="image{m1}"></span>
+				    <span class="imageMinute"></span>
+				    <span class="image{s10}"></span>
+				    <span class="image{s1}"></span>
+				    <span class="imageSecond"></span>
+				</span>
+			</div>
+			</div>
+			<div class="clear"></div>
+
+<!-- Navigation Bar -->
+
+			<div class="grid_16">
+				<ul class="nav main">
+					<li>
+						<a href="/">HOME</a>
+					</li>
+<!-- 					<li> -->
+<!-- 						<a href="#">SIGN IN</a> -->
+<!-- 					</li> -->
+					<li>
+						<a href="http://blog.dowhit.com/" target="new">BUCKET TALK</a>
+					</li>
+					{% if currentUser.authorized %}
+					{% ifnotequal currentUser "" %}
+					{% ifnotequal currentUser.display_name None %}
+					<li>
+						<a href="/whitlist/">MY BUCKET LIST</a>
+					</li>
+					{% endifnotequal %}
+					{% endifnotequal %}
+					{% endif %}
+<!-- 					<li class="secondary">
+						<input class="searchfld" size="15" type="text" name="search" value="SEARCH" onfocus="if (this.value==this.defaultValue) this.value = ''" onblur="if (this.value=='') this.value = this.defaultValue">
+						<input class="btn_Go" type="submit" value="GO">
+					</li> -->
+					<li class="secondary">
+						{{ logLink|safe }}
+					</li>
+					
+					<li class="secondary">
+						{{ profileLink|safe }}
+<!-- 						<ul> -->
+<!-- 							<li> -->
+<!-- 								<a href="/profile">Account Settings</a> -->
+<!-- 							</li> -->
+<!-- 							<li> -->
+<!-- 								<a href="#">Privacy Settings</a> -->
+<!-- 							</li> -->
+<!-- 							<li> -->
+<!-- 								<a href="#">Clock Settings</a> -->
+<!-- 							</li> -->
+<!-- 							<li> -->
+<!-- 								<a href="#">Whit List Settings</a> -->
+<!-- 							</li> -->
+<!-- 							<li> -->
+<!-- 								<a href="#">Help Center</a> -->
+<!-- 							</li> -->
+<!-- 						</ul> -->
+					</li>
+				</ul>
+<!-- 				<ul class="nav2 main"> -->
+<!-- 					{% ifnotequal currentUser "" %} -->
+<!-- 					{% ifnotequal currentUser.display_name None %} -->
+<!-- 					<li> -->
+<!-- 						<a href="/list/">{{ currentUser.display_name }}'s Whit List</a> -->
+<!-- 					</li> -->
+<!-- 					{% endifnotequal %} -->
+<!-- 					{% endifnotequal %} -->
+<!-- 					<li class="secondary"> -->
+<!-- 						{{ logLink|safe }} -->
+<!-- 					</li> -->
+<!-- 					<li class="secondary"> -->
+<!-- 						{{ profileLink|safe }} -->
+<!-- 					</li> -->
+<!-- 				</ul> -->
+			</div>
+		</div>
+
